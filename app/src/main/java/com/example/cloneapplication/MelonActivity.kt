@@ -7,7 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -34,8 +37,12 @@ class MelonActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val melonItemList = response.body()
-                    melonItemList!!.forEach {
-                        Log.d("melon", it.song)
+                    findViewById<RecyclerView>(R.id.melon_list_view).apply {
+                        this.adapter = MelonItemRecyclerAdapter(
+                            melonItemList!!, LayoutInflater.from(this@MelonActivity),
+                            Glide.with(this@MelonActivity),
+                            this@MelonActivity
+                        )
                     }
                 }
             }
@@ -54,18 +61,27 @@ class MelonItemRecyclerAdapter(
     val context: Context
 ) : RecyclerView.Adapter<MelonItemRecyclerAdapter.ViewHolder>(){
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+        val title: TextView
+        val thumbnail: ImageView
+        val play: ImageView
 
+        init{
+            title = itemView.findViewById(R.id.title)
+            thumbnail = itemView.findViewById(R.id.thumbnail)
+            play = itemView.findViewById(R.id.play)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        return ViewHolder(inflater.inflate(R.layout.melon_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.title.text = melonItemList.get(position).title
+        glide.load(melonItemList.get(position).thumbnail).into(holder.thumbnail)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return melonItemList.size
     }
 }
