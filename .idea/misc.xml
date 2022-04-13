@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/woowo/github/mini-project/mini-clone-android/app/src/main/res/drawable/insta_input_bg.xml" value="0.1905" />
+        <entry key="..\:/Users/woowo/github/mini-project/mini-clone-android/app/src/main/res/drawable/insta_login.xml" value="0.1905" />
+        <entry key="..\:/Users/woowo/github/mini-project/mini-clone-android/app/src/main/res/layout/activity_insta_join.xml" value="0.2" />
         <entry key="..\:/Users/woowo/github/mini-project/mini-clone-android/app/src/main/res/layout/activity_main.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/woowo/github/mini-project/mini-clone-android/app/src/main/res/layout/activity_melon.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/woowo/github/mini-project/mini-clone-android/app/src/main/res/layout/activity_melon_detail.xml" value="0.152" />

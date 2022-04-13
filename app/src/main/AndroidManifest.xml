@@ -13,12 +13,20 @@
         android:theme="@style/Theme.CloneApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InstaJoin"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MelonDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MelonActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
