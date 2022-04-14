@@ -55,6 +55,7 @@
         android:textSize="18dp" />
 
     <TextView
+        android:id="@+id/login_btn"
         android:layout_width="162dp"
         android:layout_height="58dp"
         android:background="@drawable/insta_login"

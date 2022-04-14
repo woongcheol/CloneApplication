@@ -22,6 +22,12 @@ class MelonItem(
 
 interface RetrofitService {
 
+//    update
+//    @POST("user/Login/")
+//    fun instaLogin(
+//        @Body params: HashMap<String, Any>
+//    ):
+
     @GET("melon/list/")
     fun getMelonItemList(): Call<ArrayList<MelonItem>>
 
